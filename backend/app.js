@@ -24,7 +24,7 @@ app.use(express.static(path.join(__dirname, "public")));
 // Configure CORS with environment variables for flexibility across environments
 const corsOrigins = process.env.CORS_ORIGIN?.split(",").map(o => o.trim()) || [
   "http://localhost:3000",    // Local frontend development
-  "https://www.gestion-egl.com", // Production frontend
+  "https://fake-inventoryegl-production.up.railway.app", // Production frontend
 ];
 const allowedOrigins = corsOrigins; // Alias for use in other parts of the code
 
