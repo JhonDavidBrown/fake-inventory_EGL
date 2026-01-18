@@ -99,9 +99,9 @@ function addSecurityHeaders(response: NextResponse, req: NextRequest) {
     ].join(", "),
 
     // Cross-Origin Policies
-    "Cross-Origin-Opener-Policy": "same-origin-allow-popups",
-    "Cross-Origin-Embedder-Policy": "credentialless",
-    "Cross-Origin-Resource-Policy": "cross-origin",
+    //"Cross-Origin-Opener-Policy": "same-origin-allow-popups",
+    //"Cross-Origin-Embedder-Policy": "credentialless",
+    //"Cross-Origin-Resource-Policy": "cross-origin",
 
     // Cache Control for sensitive pages
     "Cache-Control": req.nextUrl.pathname.includes("/dashboard")
