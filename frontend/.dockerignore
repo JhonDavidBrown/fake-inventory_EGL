@@ -1,0 +1,69 @@
+# Dependencies
+node_modules
+.pnpm-store
+
+# Build output
+.next
+out
+dist
+
+# Environment files
+.env
+.env.local
+.env*.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Testing
+coverage
+.nyc_output
+**/*.test.ts
+**/*.test.tsx
+**/*.spec.ts
+**/*.spec.tsx
+__tests__
+__mocks__
+
+# Development files
+.git
+.gitignore
+.github
+.vscode
+.idea
+*.code-workspace
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Documentation
+README.md
+docs
+*.md
+
+# Turbopack cache
+.turbo
+
+# Vercel
+.vercel
+
+# Temporary files
+tmp
+temp
+*.tmp
+*.swp
+*.swo
+*~
+
+# TypeScript
+*.tsbuildinfo

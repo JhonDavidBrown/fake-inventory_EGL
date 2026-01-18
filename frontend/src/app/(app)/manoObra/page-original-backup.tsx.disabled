@@ -1,0 +1,97 @@
+"use client";
+
+import { useEffect, useState, useCallback } from "react";
+import { useApi } from "@/hooks/useApi";
+import { getColumns, ManoObra } from "./table/columns";
+import { ManoObraTable } from "./table/ManoObraTable";
+import ManoObraEdit from "./modales/ManoObraEdit";
+
+export default function ManoObraPage() {
+  const [data, setData] = useState<ManoObra[]>([]);
+  const api = useApi({ showErrorToast: true });
+
+  const [editOpen, setEditOpen] = useState(false);
+  const [selectedRow, setSelectedRow] = useState<ManoObra | null>(null);
+
+  const fetchData = useCallback(async () => {
+    try {
+      const result = await api.get("/manos-de-obra");
+      if (result) {
+        const dataArray = Array.isArray(result) ? result : [];
+        setData(dataArray);
+      }
+    } catch (error) {
+      console.error("Error fetching mano de obra data:", error);
+      setData([]);
+    }
+  }, [api.get]); // Keep minimal dependency to ensure it works
+
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
+
+  // Auto-refresh with debouncing to prevent rate limiting
+  useEffect(() => {
+    let timeoutId: NodeJS.Timeout;
+
+    const debouncedFetch = () => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        fetchData();
+      }, 1000); // Wait 1 second before making request
+    };
+
+    const handleFocus = () => {
+      debouncedFetch();
+    };
+
+    const handleVisibilityChange = () => {
+      if (!document.hidden) {
+        debouncedFetch();
+      }
+    };
+
+    // Listen for window focus events
+    window.addEventListener('focus', handleFocus);
+    
+    // Listen for visibility change events (tab switching)
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    // Cleanup event listeners and timeout
+    return () => {
+      clearTimeout(timeoutId);
+      window.removeEventListener('focus', handleFocus);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
+  }, [fetchData]);
+
+  // Cambiar el título de la página
+  useEffect(() => {
+    document.title = "Mano de Obra | EGL";
+  }, []);
+
+  const columns = getColumns({
+    onEdit: (row) => {
+      setSelectedRow(row);
+      setEditOpen(true);
+    },
+    onDelete: () => {},
+  });
+
+  return (
+    <>
+      {selectedRow && (
+        <ManoObraEdit
+          open={editOpen}
+          setOpen={setEditOpen}
+          manoObra={selectedRow}
+          onUpdated={fetchData}
+        />
+      )}
+
+      <div className="flex justify-center p-4">
+        <ManoObraTable columns={columns} data={data} fetchData={fetchData} />
+      </div>
+    </>
+  );
+}

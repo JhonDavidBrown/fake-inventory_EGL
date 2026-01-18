@@ -1,0 +1,13 @@
+/* Modular CSS entry point - can be used as an alternative to globals.css */
+
+/* Base styles and configuration */
+@import "./base.css";
+
+/* Theme and color definitions */
+@import "./theme.css";
+
+/* Component styles */
+@import "./components/forms.css";
+@import "./components/inputs.css";
+
+/* Export all styles for potential future use */

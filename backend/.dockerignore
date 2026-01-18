@@ -1,0 +1,47 @@
+# Dependencies
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+# package-lock.json ← NECESARIO para npm ci en Dockerfile
+
+# Environment files
+.env
+.env.local
+.env.*.local
+.env.test
+
+# Testing
+__tests__
+*.test.js
+*.spec.js
+coverage
+.nyc_output
+
+# Development files
+.git
+.gitignore
+.github
+.vscode
+.idea
+
+# Logs
+logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Documentation
+README.md
+docs
+
+# Uploads (will be volume-mounted)
+public/uploads/*
+!public/uploads/.gitkeep
+
+# Temporary files
+tmp
+temp
+*.tmp

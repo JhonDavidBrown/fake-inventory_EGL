@@ -1,0 +1,52 @@
+
+> frontend@0.1.0 dev /home/edwin/Desarrollos/inventario-egl/frontend
+> next dev
+
+   ▲ Next.js 15.3.3
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.20.26:3000
+   - Environments: .env
+
+ ✓ Starting...
+ ✓ Ready in 2.2s
+ ○ Compiling /middleware ...
+ ✓ Compiled /middleware in 1100ms (224 modules)
+<w> [webpack.cache.PackFileCacheStrategy] Serializing big strings (149kiB) impacts deserialization performance (consider using Buffer instead and decode when needed)
+ ○ Compiling /dashboard ...
+ ✓ Compiled /dashboard in 8.5s (1508 modules)
+ GET /dashboard 200 in 9116ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /favicon.ico in 1568ms (1494 modules)
+ ✓ Compiled in 0ms (891 modules)
+ ✓ Compiled in 1364ms (1484 modules)
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 3998ms
+ GET /favicon.ico 200 in 2887ms
+ GET /dashboard 200 in 2084ms
+ GET /favicon.ico 200 in 20ms
+ ○ Compiling /pantalones ...
+ ✓ Compiled /pantalones in 1391ms (1574 modules)
+ GET /pantalones 200 in 1604ms
+ ⨯ upstream image response failed for http://localhost:3001/uploads/image-1752937649559-960374370.jpeg 404
+ ⨯ upstream image response failed for http://localhost:3001/uploads/test-image.jpg 404
+ ○ Compiling /pantalones/crear ...
+ ✓ Compiled /pantalones/crear in 1394ms (1634 modules)
+ GET /pantalones/crear 200 in 1548ms
+ GET /pantalones 200 in 43ms
+ ⨯ upstream image response failed for http://localhost:3001/uploads/image-1752937649559-960374370.jpeg 404
+ ⨯ upstream image response failed for http://localhost:3001/uploads/test-image.jpg 404
+ ○ Compiling /pantalones/[referencia] ...
+ ✓ Compiled /pantalones/[referencia] in 1091ms (1652 modules)
+ GET /pantalones/39 200 in 2095ms
+ ⨯ ./src/hooks/usePantalonFormEnhanced.ts
+Module parse failed: Identifier 'apiUrl' has already been declared (418:22)
+|                 }
+|                 // Enviar al API
+>                 const apiUrl = getApiUrl();
+|                 const response = await fetch("".concat(apiUrl, "/pantalones"), {
+|                     method: "POST",
+
+Import trace for requested module:
+./src/hooks/usePantalonFormEnhanced.ts
+./src/app/(app)/pantalones/crear/components/PantalonCreatePage.tsx
+ ✓ Compiled in 1311ms (1666 modules)
+ GET /pantalones/39 200 in 642ms

@@ -1,0 +1,55 @@
+.table-header {
+  padding-inline: 0;
+}
+
+/* Mejoras responsive para checkboxes y botones */
+.table-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Breakpoint expandido para incluir tablets */
+@media (max-width: 1220px) {
+  .checkbox-column,
+  .actions-column {
+    position: sticky;
+    background: inherit;
+    z-index: 1;
+  }
+
+  .checkbox-column {
+    left: 0;
+    min-width: 50px;
+    border-right: 1px solid hsl(var(--border));
+  }
+
+  .actions-column {
+    right: 0;
+    min-width: 80px;
+    border-left: 1px solid hsl(var(--border));
+  }
+
+  /* Permitir que la tabla use menos espacio en pantallas medianas */
+  .insumos-table-inner {
+    min-width: 700px !important;
+  }
+
+  /* Aplicar width 90% solo en pantallas medianas */
+  .insumos-page {
+    width: 95% !important;
+  }
+}
+
+/* Asegurar que la tabla no cause overflow en el viewport */
+.insumos-page {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.insumos-page * {
+  box-sizing: border-box;
+}

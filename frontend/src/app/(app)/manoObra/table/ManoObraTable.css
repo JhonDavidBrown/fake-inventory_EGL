@@ -1,0 +1,48 @@
+/* Mejoras responsive para checkboxes y botones en mano de obra */
+@media (max-width: 920px) {
+  .mano-obra-table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .mano-obra-checkbox-column,
+  .mano-obra-actions-column {
+    position: sticky;
+    background: inherit;
+    z-index: 1;
+  }
+  
+  .mano-obra-checkbox-column {
+    left: 0;
+    min-width: 50px;
+    border-right: 1px solid hsl(var(--border));
+  }
+  
+  .mano-obra-actions-column {
+    right: 0;
+    min-width: 80px;
+    border-left: 1px solid hsl(var(--border));
+  }
+  
+  /* Permitir que la tabla use menos espacio en pantallas medianas */
+  .mano-obra-table-inner {
+    min-width: 600px !important;
+  }
+  
+  /* Aplicar width 90% solo en pantallas medianas */
+  .mano-obra-page {
+    width: 90% !important;
+  }
+}
+
+/* CSS base para mano-obra-page */
+.mano-obra-page {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.mano-obra-page * {
+  box-sizing: border-box;
+}

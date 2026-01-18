@@ -1,0 +1,81 @@
+
+> frontend@0.1.0 lint C:\Users\USER\Desarrollos\inventario-egl\frontend
+> next lint
+
+`next lint` is deprecated and will be removed in Next.js 16.
+For new projects, use create-next-app to choose your preferred linter.
+For existing projects, migrate to the ESLint CLI:
+npx @next/codemod@canary next-lint-to-eslint-cli .
+
+ ⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of C:\Users\USER\package-lock.json as the root directory.
+ To silence this warning, set `outputFileTracingRoot` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/output#caveats for more information.
+ Detected additional lockfiles: 
+   * C:\Users\USER\Desarrollos\inventario-egl\frontend\pnpm-lock.yaml
+
+
+./src/app/(app)/insumos/components/InsumoStats.tsx
+18:14  Error: 'CardHeader' is not defined.  react/jsx-no-undef
+
+./src/app/(app)/manoObra/components/ManoObraFilters.tsx
+17:16  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./src/app/(app)/manoObra/components/ManoObraPageClient.tsx
+8:10  Error: 'ManoObraTable' is defined but never used.  @typescript-eslint/no-unused-vars
+47:5  Error: 'resultCount' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+51:10  Error: 'showCreateModal' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+52:10  Error: 'selectedItem' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+62:9  Error: 'handleCreate' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+72:9  Error: 'handleUpdate' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+82:9  Error: 'handleDelete' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+239:29  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+239:46  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+
+./src/app/(app)/manoObra/components/ManoObraPageWithHooks.tsx
+8:10  Error: 'useRouter' is defined but never used.  @typescript-eslint/no-unused-vars
+85:9  Error: 'handleNavigateToDetail' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+
+./src/app/(app)/manoObra/hooks/useManoObra.ts
+23:3  Error: 'getManoObraData' is defined but never used.  @typescript-eslint/no-unused-vars
+24:21  Error: 'apiCreateManoObra' is defined but never used.  @typescript-eslint/no-unused-vars
+25:21  Error: 'apiUpdateManoObra' is defined but never used.  @typescript-eslint/no-unused-vars
+26:21  Error: 'apiDeleteManoObra' is defined but never used.  @typescript-eslint/no-unused-vars
+27:25  Error: 'apiDeleteManoObraBulk' is defined but never used.  @typescript-eslint/no-unused-vars
+44:10  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+46:57  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+47:78  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+48:52  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+49:65  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+57:11  Error: 'getToken' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+64:38  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+86:6  Warning: React Hook useCallback has a missing dependency: 'api'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+134:6  Warning: React Hook useCallback has a missing dependency: 'api'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+164:6  Warning: React Hook useCallback has a missing dependency: 'api'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+182:6  Warning: React Hook useCallback has a missing dependency: 'api'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+205:6  Warning: React Hook useCallback has a missing dependency: 'api'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/(app)/manoObra/modales/ManoObraDelete.tsx
+4:10  Error: 'Button' is defined but never used.  @typescript-eslint/no-unused-vars
+91:43  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+91:61  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+
+./src/app/(app)/manoObra/page-original-backup.tsx
+27:6  Warning: React Hook useCallback has a missing dependency: 'api'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/(app)/manoObra/table/ManoObraTable.tsx
+111:6  Warning: React Hook useMemo has unnecessary dependencies: 'columnFilters', 'data', and 'globalFilter'. Either exclude them or remove the dependency array.  react-hooks/exhaustive-deps
+143:6  Warning: React Hook useCallback has an unnecessary dependency: 'clearAllFilters'. Either exclude it or remove the dependency array. Outer scope values like 'clearAllFilters' aren't valid dependencies because mutating them doesn't re-render the component.  react-hooks/exhaustive-deps
+148:9  Error: 'handleDeleteSelected' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+
+./src/app/(app)/pantalones/[referencia]/editar/components/PantalonEditPageSimpleRefactored.tsx
+71:6  Warning: React Hook useEffect has a missing dependency: 'form'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+80:6  Warning: React Hook useCallback has missing dependencies: 'form', 'searchTerms', and 'selectors'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+88:6  Warning: React Hook useCallback has missing dependencies: 'form', 'searchTerms', and 'selectors'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+94:6  Warning: React Hook useCallback has a missing dependency: 'form'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/hooks/useStandardApi.ts
+131:6  Warning: React Hook useEffect has a missing dependency: 'fetchData'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
+ ELIFECYCLE  Command failed with exit code 1.
